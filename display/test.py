@@ -11,10 +11,10 @@ class SignalThread(QThread):
 
     def run(self):
         while True:
+            time.sleep(10)
             token = read.read_token()
             print(token)
             self.toggle_signal.emit()  # 신호 방출
-            time.sleep(10)
 
 class MainWindow(QMainWindow):
     def __init__(self):
