@@ -166,7 +166,7 @@ class MainWindow(QMainWindow):
         print(user_duty)
         if self.image_visible:
             self.image_label.hide()  # 이미지 숨기기
-            self.name_label.setText(unicode(user_name,'utf-8'))
+            self.name_label.setText(user_name)
             # self.name_label.setText(unicode("이름: " + user_name, 'utf-8'))
             # self.id_label.setText(unicode("사원번호: ",'utf-8') + user_employee_number)
             # self.team_label.setText(unicode("직급: " + user_duty, 'utf-8'))
