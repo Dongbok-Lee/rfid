@@ -1,6 +1,6 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#!/usr/bin/env python
 import RPi.GPIO as GPIO
 import MFRC522
 
@@ -21,8 +21,8 @@ def write_text(Sector, text):
 
     RFID = MFRC522.MFRC522()
 
-    print "# RFID Writer\n"
-    print "Info: Leave the sector field empty to exit.\n"
+    print("# RFID Writer\n")
+    print("Info: Leave the sector field empty to exit.\n")
 
     while True:
         (status, TagSize) = RFID.Request(RFID.PICC_REQIDL)
@@ -31,7 +31,7 @@ def write_text(Sector, text):
             continue
 
         if Sector < 1 or Sector > (TagSize - 1):
-            print "Sector out of range (1 - %s)\n" % (TagSize - 1)
+            print("Sector out of range (1 - %s)\n" % (TagSize - 1))
             break
 
         # Selecting blocks
@@ -64,10 +64,10 @@ def write_text(Sector, text):
             for block_num in BlockAddrs:
                 RFID.Write(block_num, data[(i*16):(i+1)*16])
                 i += 1
-            print "UID:  ", format_uid(UID)
-            print "Data: ", text[0:(len(BlockAddrs) * 16)], "\n"
+            print( "UID:  ", format_uid(UID))
+            print( "Data: ", text[0:(len(BlockAddrs) * 16)], "\n")
         else:
-            print "Can't access sector", Sector, "!\n"
+            print ("Can't access sector", Sector, "!\n")
         RFID.StopCrypto1()
         break
 

@@ -1,6 +1,5 @@
 # Created by: https://github.com/mxgxw/MFRC522-python/blob/master/MFRC522.py
 # Modified by: Tobias Schneider https://github.com/tsndr/
-# -*- coding: utf-8 -*-
 
 import RPi.GPIO as GPIO
 import spi
