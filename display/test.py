@@ -50,7 +50,7 @@ class SignalThread(QThread):
             print(user_phone_number)
             print(user_employee_number)
             print(user_profile_image_url)
-            saved_path = image.download_image(user_profile_image_url, file_name="user_photo.jpg")
+            saved_path = image.download_image(user_profile_image_url, file_name="user_photo.png")
             user_profile_image_url = saved_path
             self.toggle_signal.emit()  # 신호 방출
 
@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
         # 사진 영역
         self.photo_label = QLabel()
         self.photo_label.setPixmap(
-            QPixmap("user_photo.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("user_photo.png").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         )
         self.photo_label.setAlignment(Qt.AlignCenter)
 
