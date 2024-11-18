@@ -85,6 +85,7 @@ def read_text(Sector):
 
     RFID.AntennaOff()
     GPIO.cleanup()
+    return ""
 
 def read_token():
     result = ""

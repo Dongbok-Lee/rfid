@@ -83,4 +83,4 @@ def write_token(token):
         write_text(i + 1, token_split_arr[i])
 
 
-write_token("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoxMCwiaXNzIjoiU1NtYXJ0T2ZmaWNlIiwiaWF0IjoxNzMxNzMxOTI0LCJleHAiOjE3MzMwMjc5MjR9.bC7KRR1GOO1ZuzMTDLIoiYh0sSrz7AMOSnTDGp5sSJI")
+write_token("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0eXBvb24wODIwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1VTRVIiLCJpZCI6MjksImlzcyI6IlNTbWFydE9mZmljZSIsImlhdCI6MTczMTkyOTYzNiwiZXhwIjoxNzMzMjI1NjM2fQ.DAaJSnZ3gyy0IWx0oBaVrs8lPdvJQ4sikVVa5cHkKaA")
