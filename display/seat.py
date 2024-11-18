@@ -6,7 +6,7 @@ def seat_in(token):
     return request_seat("IN_USE", token)
 
 def seat_out(token):
-    return request_seat("NOT_OCCUPIED", token)
+    return request_seat("VACANT", token)
 
 def request_seat(status, token):
     # API URL
