@@ -7,22 +7,31 @@ from PyQt4.QtCore import QThread, pyqtSignal, Qt
 import read
 import user
 
-
+user_duty = ""
+user_name = ""
+user_phone_number = ""
+user_profile_image_url = ""
+user_employee_number = ""
+user_position = ""
+user_email = ""
 
 
 class SignalThread(QThread):
-    global user_duty
-    global user_name
-    global user_phone_number
-    global user_profile_image_url
-    global user_employee_number
-    global user_position
-    global user_email
+
 
 
     toggle_signal = pyqtSignal()  # 신호 정의
 
     def run(self):
+
+        global user_duty
+        global user_name
+        global user_phone_number
+        global user_profile_image_url
+        global user_employee_number
+        global user_position
+        global user_email
+
         while True:
             time.sleep(2)
             token = read.read_token()
@@ -42,14 +51,6 @@ class SignalThread(QThread):
             self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
-
-    global user_duty
-    global user_name
-    global user_phone_number
-    global user_profile_image_url
-    global user_employee_number
-    global user_position
-    global user_email
 
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -150,6 +151,15 @@ class MainWindow(QMainWindow):
         self.central_widget.resizeEvent = self.resize_event
 
     def toggle_image(self):
+
+        global user_duty
+        global user_name
+        global user_phone_number
+        global user_profile_image_url
+        global user_employee_number
+        global user_position
+        global user_email
+
         """이미지를 숨기거나 보이게 하는 함수."""
         print(user_name)
         print(user_duty)
@@ -186,10 +196,3 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
-    user_duty = ""
-    user_name = ""
-    user_phone_number = ""
-    user_profile_image_url = ""
-    user_employee_number = ""
-    user_position = ""
-    user_email = ""
