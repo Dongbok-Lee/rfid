@@ -5,6 +5,18 @@ import time
 from PyQt4.QtGui import QApplication, QLabel, QHBoxLayout, QVBoxLayout, QMainWindow, QWidget, QPushButton, QPixmap, QFont, QFontDatabase
 from PyQt4.QtCore import QThread, pyqtSignal, Qt
 
+# 한글 메시지 추가 깨짐 방지---------------------------
+reload(sys)
+sys.setdefaultencoding('utf-8')
+# 한글 메시지 추가 깨짐 방지---------------------------
+
+try:
+    if sys.frozen:
+        sys.setdefaultencoding("utf-8")
+except:
+    pass
+
+
 class SignalThread(QThread):
     toggle_signal = pyqtSignal()  # 신호 정의
 
