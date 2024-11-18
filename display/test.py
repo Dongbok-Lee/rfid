@@ -26,11 +26,16 @@ class SignalThread(QThread):
             info = user.my_info(token)
             user_duty = info[u'data'][u'duty']
             user_name = info[u'data'][u'name']
-            user_phone_number = ""
-            user_profile_image_url = ""
-            user_employee_number = ""
-            user_position = ""
-            user_email = ""
+            user_phone_number = info[u'data'][u'phoneNumber']
+            user_profile_image_url = info[u'data'][u'profileImageUrl']
+            user_employee_number = info[u'data'][u'employeeNumber']
+            user_position = info[u'data'][u'position']
+            user_email =  info[u'data'][u'email']
+
+            print(user_duty)
+            print(user_name)
+            print(user_phone_number)
+            print(user_profile_image_url)
             self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
