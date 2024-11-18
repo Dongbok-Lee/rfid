@@ -10,7 +10,7 @@ def seat_out():
 
 def request_seat(status, token):
     # API URL
-    url = "https://k11b202.p.ssafy.io/api/v1/seats/2"
+    url = "https://k11b202.p.ssafy.io/api/v1/seats/26"
 
     # Headers에 Authorization 추가
     headers = {
