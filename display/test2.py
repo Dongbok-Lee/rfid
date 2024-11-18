@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
-from qtpy.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
-from qtpy.QtWebEngineWidgets import QWebEngineView
-
+from PyQt4.QtGui import QApplication, QMainWindow, QVBoxLayout, QWidget
+from PyQt4.QtWebKit import QWebView
 
 class NaverBrowser(QMainWindow):
     def __init__(self):
@@ -17,11 +16,10 @@ class NaverBrowser(QMainWindow):
         # 레이아웃
         layout = QVBoxLayout(self.central_widget)
 
-        # QWebEngineView를 사용하여 웹 페이지 로드
-        self.browser = QWebEngineView()
+        # QWebView를 사용하여 웹 페이지 로드
+        self.browser = QWebView()
         self.browser.setUrl("https://www.naver.com")  # 네이버 주소
         layout.addWidget(self.browser)
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
