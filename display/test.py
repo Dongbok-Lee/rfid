@@ -90,31 +90,31 @@ class MainWindow(QMainWindow):
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
-        self.id_label = QLabel("사원번호: " + user_employee_number,'utf-8')
+        self.id_label = QLabel(unicode("사원번호: ", 'utf-8') + user_employee_number)
         self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
 
         # 팀 이름
-        self.team_label = QLabel("직급: " + unicode(user_duty,'utf-8'))
+        self.team_label = QLabel(unicode("직급: " + user_duty,'utf-8'))
         self.team_label.setFont(QFont(nanumB_font, 12))
         self.team_label.setStyleSheet("color: #555555;")
         self.team_label.setAlignment(Qt.AlignCenter)
 
         # 직책
-        self.position_label = QLabel("직책: " + unicode(user_position,'utf-8'))
+        self.position_label = QLabel(unicode("직책: ", 'utf-8') + unicode(user_position,'utf-8'))
         self.position_label.setFont(QFont(nanumB_font, 12))
         self.position_label.setStyleSheet("color: #555555;")
         self.position_label.setAlignment(Qt.AlignCenter)
 
         # 전화번호
-        self.phone_label = QLabel("전화번호: " + user_phone_number,'utf-8')
+        self.phone_label = QLabel(unicode("전화번호: ", 'utf-8')  + user_phone_number,'utf-8')
         self.phone_label.setFont(QFont(nanumB_font, 12))
         self.phone_label.setStyleSheet("color: #555555;")
         self.phone_label.setAlignment(Qt.AlignCenter)
 
         # 이메일
-        self.email_label = QLabel("이메일: " + user_email)
+        self.email_label = QLabel(unicode("이메일: ", 'utf-8')  + user_email)
         self.email_label.setFont(QFont(nanumB_font, 12))
         self.email_label.setStyleSheet("color: #555555;")
         self.email_label.setAlignment(Qt.AlignCenter)
@@ -166,11 +166,11 @@ class MainWindow(QMainWindow):
         print(user_duty)
         if self.image_visible:
             self.image_label.hide()  # 이미지 숨기기
-            self.name_label.setText("이름: " + user_name)
-            self.id_label.setText("사원번호: " + user_employee_number)
-            self.team_label.setText("직급: " + user_duty)
-            self.position_label.setText("직책: " + user_position)
-            self.phone_label.setText("전화번호: " + user_phone_number)
+            self.name_label.setText(unicode("이름: " + user_name, 'utf-8'))
+            self.id_label.setText(unicode("사원번호: ",'utf-8') + user_employee_number)
+            self.team_label.setText(unicode("직급: " + user_duty, 'utf-8'))
+            self.position_label.setText(unicode("직책: " + user_position, ,'utf-8'))
+            self.phone_label.setText(unicode("전화번호: ",'utf-8') + user_phone_number)
             self.email_label.setText("이메일: " + user_email)
         else:
             self.image_label.show()  # 이미지 보이기
