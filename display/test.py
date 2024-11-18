@@ -169,7 +169,7 @@ class MainWindow(QMainWindow):
             self.name_label.setText(unicode("이름: " + user_name, 'utf-8'))
             self.id_label.setText(unicode("사원번호: ",'utf-8') + user_employee_number)
             self.team_label.setText(unicode("직급: " + user_duty, 'utf-8'))
-            self.position_label.setText(unicode("직책: " + user_position, ,'utf-8'))
+            self.position_label.setText(unicode("직책: " + user_position,'utf-8'))
             self.phone_label.setText(unicode("전화번호: ",'utf-8') + user_phone_number)
             self.email_label.setText("이메일: " + user_email)
         else:
