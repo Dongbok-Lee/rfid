@@ -139,14 +139,15 @@ class MainWindow(QMainWindow):
 
     def toggle_image(self):
         """이미지를 숨기거나 보이게 하는 함수."""
+
         if self.image_visible:
             self.image_label.hide()  # 이미지 숨기기
-            self.name_label.setText(unicode("이름: " + user_data['name'], "utf-8"))
-            self.id_label.setText(unicode("사원번호: " + user_data['employee_number'], "utf-8"))
-            self.team_label.setText(unicode("직급: " + user_data['duty'], "utf-8"))
-            self.position_label.setText(unicode("직책: " + user_data['position'], "utf-8"))
-            self.phone_label.setText(unicode("전화번호: " + user_data['phone_number'], "utf-8"))
-            self.email_label.setText(unicode("이메일: " + user_data['email'], "utf-8"))
+            self.name_label.setText(unicode("이름: " + user_name, "utf-8"))
+            self.id_label.setText(unicode("사원번호: " + user_employee_number, "utf-8"))
+            self.team_label.setText(unicode("직급: " + user_duty, "utf-8"))
+            self.position_label.setText(unicode("직책: " + user_position, "utf-8"))
+            self.phone_label.setText(unicode("전화번호: " + user_phone_number, "utf-8"))
+            self.email_label.setText(unicode("이메일: " + user_email, "utf-8"))
         else:
             self.image_label.show()  # 이미지 보이기
         self.image_visible = not self.image_visible
