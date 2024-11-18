@@ -22,5 +22,6 @@ def request_info(token):
         print(data)
         return data
     else:
+        return None
         print("Error:", response.status_code, response.text)
 

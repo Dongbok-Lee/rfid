@@ -2,22 +2,19 @@
 
 import requests
 # 자리 앉기
-def seat_in():
-    request_seat("IN_USE")
+def seat_in(token):
+    request_seat("IN_USE", token)
 
 def seat_out():
-    request_seat("NOT_OCCUPIED")
+    request_seat("NOT_OCCUPIED", token)
 
-def request_seat(status):
+def request_seat(status, token):
     # API URL
     url = "https://k11b202.p.ssafy.io/api/v1/seats/2"
 
-    # Bearer Token
-    token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZW1pbmtpbTE0MzJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImlkIjoyLCJpc3MiOiJTU21hcnRPZmZpY2UiLCJpYXQiOjE3MzEzMDcxMjUsImV4cCI6MTczMjYwMzEyNX0.k1DJeQIMgaHw-MHo9QM3w8sgteb843wyV-zerGgJ0MU"
-
     # Headers에 Authorization 추가
     headers = {
-        "Authorization": f"Bearer {token}",  # Bearer 토큰 추가
+        "Authorization": "Bearer +" + token,  # Bearer 토큰 추가
         "Content-Type": "application/json",  # JSON 데이터 요청
     }
 

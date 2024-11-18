@@ -7,6 +7,7 @@ from PyQt4.QtCore import QThread, pyqtSignal, Qt
 import read
 import user
 import image
+import seat
 
 user_duty = ""
 user_name = ""
@@ -33,10 +34,22 @@ class SignalThread(QThread):
         global user_position
         global user_email
 
+        user_active = False
+
         while True:
             time.sleep(2)
             token = read.read_token()
             info = user.my_info(token)
+
+            if info is None:
+                continue
+
+            if not user_active:
+
+
+            user_active = not user_active
+
+
             user_duty = info[u'data'][u'duty']
             user_name = info[u'data'][u'name']
             user_phone_number = info[u'data'][u'phoneNumber']
