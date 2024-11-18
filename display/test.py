@@ -50,7 +50,7 @@ class SignalThread(QThread):
             print(user_phone_number)
             print(user_employee_number)
             print(user_profile_image_url)
-            saved_path = image.download_image(user_profile_image_url, file_name="user_photo.png")
+            saved_path = image.download_image(user_profile_image_url, file_name="user_photo.jpg")
             user_profile_image_url = saved_path
             self.toggle_signal.emit()  # 신호 방출
 
@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
         # 사진 영역
         self.photo_label = QLabel()
         self.photo_label.setPixmap(
-            QPixmap("downloded_img.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("user_photo.png").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         )
         self.photo_label.setAlignment(Qt.AlignCenter)
 
@@ -133,6 +133,16 @@ class MainWindow(QMainWindow):
         self.layout.addWidget(self.photo_label, alignment=Qt.AlignLeft)  # 사진 왼쪽 정렬
         self.layout.addLayout(info_layout)
 
+        # 최상위 이미지 레이블 생성
+        self.image_label = QLabel(self)
+        self.image_label.setPixmap(
+            QPixmap("user_image.jpg").scaled(
+                self.width(), self.height(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation
+            )
+        )
+        self.image_label.setAlignment(Qt.AlignCenter)
+        self.image_label.setGeometry(0, 0, self.width(), self.height())
+
         # 이미지 표시 여부 초기화
         self.image_visible = True
 
@@ -165,9 +175,9 @@ class MainWindow(QMainWindow):
             self.position_label.setText(unicode("직책: ", 'utf-8') + user_position)
             self.phone_label.setText(unicode("전화번호: ", 'utf-8') + user_phone_number)
             self.email_label.setText(unicode("이메일: ", 'utf-8') + user_email)
-            # self.photo_label.setPixmap(
-            # QPixmap("user_photo.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-            # )
+            self.photo_label.setPixmap(
+            QPixmap("user_photo.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            )
         else:
             self.image_label.show()  # 이미지 보이기
         self.image_visible = not self.image_visible
