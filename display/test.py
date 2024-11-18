@@ -4,7 +4,7 @@ import sys
 import time
 from PyQt4.QtGui import QApplication, QLabel, QHBoxLayout, QVBoxLayout, QMainWindow, QWidget, QPushButton, QPixmap, QFont, QFontDatabase
 from PyQt4.QtCore import QThread, pyqtSignal, Qt
-from read
+import read
 
 class SignalThread(QThread):
     toggle_signal = pyqtSignal()  # 신호 정의
