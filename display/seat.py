@@ -5,7 +5,7 @@ import requests
 def seat_in(token):
     return request_seat("IN_USE", token)
 
-def seat_out():
+def seat_out(token):
     return request_seat("NOT_OCCUPIED", token)
 
 def request_seat(status, token):
