@@ -6,6 +6,7 @@ from PyQt4.QtGui import QApplication, QLabel, QHBoxLayout, QVBoxLayout, QMainWin
 from PyQt4.QtCore import QThread, pyqtSignal, Qt
 import read
 import user
+import image
 
 user_duty = ""
 user_name = ""
@@ -49,6 +50,8 @@ class SignalThread(QThread):
             print(user_phone_number)
             print(user_employee_number)
             print(user_profile_image_url)
+            saved_path = image.download_image(user_profile_image_url, file_name="downloaded_image.jpg")
+            user_profile_image_url = saved_path
             self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
@@ -172,6 +175,9 @@ class MainWindow(QMainWindow):
             self.position_label.setText(unicode("직책: ", 'utf-8') + user_position)
             self.phone_label.setText(unicode("전화번호: ", 'utf-8') + user_phone_number)
             self.email_label.setText(unicode("이메일: ", 'utf-8') + user_email)
+            self.photo_label.setPixmap(
+            QPixmap("images/downloaded_image.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            )
         else:
             self.image_label.show()  # 이미지 보이기
         self.image_visible = not self.image_visible
