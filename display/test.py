@@ -123,7 +123,7 @@ class MainWindow(QMainWindow):
     def resize_event(self, event):
         """창 크기 변경 시 이미지 크기 재조정."""
         self.image_label.setPixmap(
-            QPixmap("nfc.png").scaled(
+            QPixmap("nfc.jpg").scaled(
                 self.width(), self.height(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation
             )
         )
