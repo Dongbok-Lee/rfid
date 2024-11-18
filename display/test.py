@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import time
 from PyQt4.QtGui import QApplication, QLabel, QHBoxLayout, QVBoxLayout, QMainWindow, QWidget, QPushButton, QPixmap, QFont, QFontDatabase
