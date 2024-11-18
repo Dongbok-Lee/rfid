@@ -17,4 +17,4 @@ def request_info(token):
 
     # GET 요청 보내기
     response = requests.get(url, headers=headers)
-    return response[1]()
+    return response
