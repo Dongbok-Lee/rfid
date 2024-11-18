@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
         # 사진 영역
         self.photo_label = QLabel()
         self.photo_label.setPixmap(
-            QPixmap("user_photo.png").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("downloded_image.png").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         )
         self.photo_label.setAlignment(Qt.AlignCenter)
 
@@ -176,7 +176,7 @@ class MainWindow(QMainWindow):
             self.phone_label.setText(unicode("전화번호: ", 'utf-8') + user_phone_number)
             self.email_label.setText(unicode("이메일: ", 'utf-8') + user_email)
             self.photo_label.setPixmap(
-            QPixmap("user_photo.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("downloded_image.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
             )
         else:
             self.image_label.show()  # 이미지 보이기
