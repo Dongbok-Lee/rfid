@@ -17,5 +17,11 @@ def request_info(token):
 
     # GET 요청 보내기
     response = requests.get(url, headers=headers)
-    print(response)
-    return response
+    if response.status_code == 200:
+        data = response.json()  # JSON 응답 데이터 파싱
+        print(data)
+        return data
+    else:
+        print("Error:", response.status_code, response.text)
+
+my_info("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0eXBvb24wODIwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1VTRVIiLCJpZCI6MjksImlzcyI6IlNTbWFydE9mZmljZSIsImlhdCI6MTczMTkyOTYzNiwiZXhwIjoxNzMzMjI1NjM2fQ.DAaJSnZ3gyy0IWx0oBaVrs8lPdvJQ4sikVVa5cHkKaA")
