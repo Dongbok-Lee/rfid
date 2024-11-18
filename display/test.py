@@ -176,7 +176,7 @@ class MainWindow(QMainWindow):
             self.phone_label.setText(unicode("전화번호: ", 'utf-8') + user_phone_number)
             self.email_label.setText(unicode("이메일: ", 'utf-8') + user_email)
             self.photo_label.setPixmap(
-            QPixmap("images/downloaded_image.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("./images/downloaded_image.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
             )
         else:
             self.image_label.show()  # 이미지 보이기
