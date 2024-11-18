@@ -5,15 +5,12 @@ import time
 from PyQt5.QtWidgets import QApplication, QLabel, QHBoxLayout, QVBoxLayout, QMainWindow, QWidget, QPushButton
 from PyQt5.QtGui import QPixmap, QFont, QFontDatabase
 from PyQt5.QtCore import QThread, pyqtSignal, Qt
-import read
 
 class SignalThread(QThread):
     toggle_signal = pyqtSignal()  # 신호 정의
 
     def run(self):
-        while True:
-            token = read.read_token()
-            self.toggle_signal.emit()  # 신호 방출
+        self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
     def __init__(self):
