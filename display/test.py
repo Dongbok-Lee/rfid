@@ -135,7 +135,7 @@ class MainWindow(QMainWindow):
         event.accept()
 
 if __name__ == "__main__":
-    app = QApplication(sys.aragv)
+    app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
