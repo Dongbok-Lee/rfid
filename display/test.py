@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         # 사진 영역
         self.photo_label = QLabel()
         self.photo_label.setPixmap(
-            QPixmap("https://sfdssafy.s3.amazonaws.com/%EC%B0%A8%EC%9D%80%EC%9A%B0.PNGbbeefb52-9c51-4aa8-9824-e9384371950a").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("cha.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         )
         self.photo_label.setAlignment(Qt.AlignCenter)
 
@@ -48,13 +48,13 @@ class MainWindow(QMainWindow):
         info_layout = QVBoxLayout()
 
         # 이름
-        self.name_label = QLabel(unicode("홍길동",'utf-8'))
+        self.name_label = QLabel(unicode("김진기",'utf-8'))
         self.name_label.setFont(QFont(nanumB_font, 18, QFont.Bold))
         self.name_label.setStyleSheet("color: #333333;")
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
-        self.id_label = QLabel(unicode("사원번호: 12345",'utf-8'))
+        self.id_label = QLabel(unicode("사원번호: S2312345",'utf-8'))
         self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
@@ -78,7 +78,7 @@ class MainWindow(QMainWindow):
         self.phone_label.setAlignment(Qt.AlignCenter)
 
         # 이메일
-        self.email_label = QLabel(unicode("이메일: honggildong@example.com",'utf-8'))
+        self.email_label = QLabel(unicode("이메일: chaeunwoo@example.com",'utf-8'))
         self.email_label.setFont(QFont(nanumB_font, 12))
         self.email_label.setStyleSheet("color: #555555;")
         self.email_label.setAlignment(Qt.AlignCenter)
