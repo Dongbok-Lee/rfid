@@ -1,37 +1,38 @@
+
 # -*- coding: utf-8 -*-
 import sys
-from PyQt4.QtGui import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
-from PyQt4.QtCore import Qt
+import os                   #Win Fun's
 
-class SimpleUI(QMainWindow):
-    def __init__(self):
-        super(SimpleUI, self).__init__()
+from PyQt4 import QtCore, QtGui, uic, Qt
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+from PyQt4 import uic
+from datetime import datetime
 
-        # 윈도우 설정
-        self.setWindowTitle("PyQt4 간단 UI")
-        self.setGeometry(100, 100, 400, 300)
+# 한글 메시지 추가 깨짐 방지---------------------------
+reload(sys)
+sys.setdefaultencoding('utf-8')
+# 한글 메시지 추가 깨짐 방지---------------------------
 
-        # 메인 위젯 및 레이아웃
-        self.central_widget = QWidget()
-        self.setCentralWidget(self.central_widget)
-        self.layout = QVBoxLayout(self.central_widget)
+try:
+    if sys.frozen:
+        sys.setdefaultencoding("utf-8")
+except:
+    pass
 
-        # 라벨
-        self.label = QLabel("안녕하세요! 버튼을 눌러보세요.", self)
-        self.label.setAlignment(Qt.AlignCenter)
-        self.layout.addWidget(self.label)
+form_class = uic.loadUiType("Study_Py.ui")[0]
+class MyWindow(QMainWindow, form_class):
+    #global gReadList(255)
 
-        # 버튼
-        self.button = QPushButton("클릭", self)
-        self.button.clicked.connect(self.on_button_click)  # 버튼 클릭 이벤트 연결
-        self.layout.addWidget(self.button)
+ def __init__(self, parent=None):
+        QtGui.QMainWindow.__init__(self, parent)
+        self.setupUi(self)
+        self.setWindowTitle("Study_Python")
 
-    def on_button_click(self):
-        """버튼 클릭 시 호출되는 메서드"""
-        self.label.setText("버튼이 눌렸습니다!")
-
+# Main Start *****************************************
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = SimpleUI()
-    window.show()
-    sys.exit(app.exec_())
+    myWindow = MyWindow()
+    myWindow.show()
+    app.exec_()
+
