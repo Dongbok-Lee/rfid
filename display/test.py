@@ -50,7 +50,7 @@ class SignalThread(QThread):
             print(user_phone_number)
             print(user_employee_number)
             print(user_profile_image_url)
-            saved_path = image.download_image(user_profile_image_url, file_name="user_photo.jpg")
+            saved_path = image.download_image(user_profile_image_url, file_name="downloaded_image.jpg")
             user_profile_image_url = saved_path
             self.toggle_signal.emit()  # 신호 방출
 
