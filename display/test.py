@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
-        self.id_label = QLabel("사원번호: " + user_employee_number,'utf-8')
+        self.id_label = QLabel("사원번호: " + str(user_employee_number),'utf-8')
         self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
