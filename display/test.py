@@ -7,13 +7,7 @@ from PyQt4.QtCore import QThread, pyqtSignal, Qt
 import read
 import user
 
-user_duty = ""
-user_name = ""
-user_phone_number = ""
-user_profile_image_url = ""
-user_employee_number = ""
-user_position = ""
-user_email = ""
+
 
 
 class SignalThread(QThread):
@@ -192,3 +186,10 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+    user_duty = ""
+    user_name = ""
+    user_phone_number = ""
+    user_profile_image_url = ""
+    user_employee_number = ""
+    user_position = ""
+    user_email = ""
