@@ -87,10 +87,8 @@ def read_text(Sector):
     GPIO.cleanup()
 
 def read_token():
-    result = ''
+    result = ""
     for i in range(1, 6):
         result += read_text(i)
     
     return result
-
-print(read_token())
