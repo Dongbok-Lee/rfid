@@ -11,7 +11,7 @@ def request_info(token):
 
     # Headers에 Authorization 추가
     headers = {
-        "Authorization": f"Bearer {token}",  # Bearer 토큰 추가
+        "Authorization": "Bearer " + token,  # Bearer 토큰 추가
         "Content-Type": "application/json",  # JSON 데이터 요청
     }
 
