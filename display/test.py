@@ -9,7 +9,9 @@ class SignalThread(QThread):
     toggle_signal = pyqtSignal()  # 신호 정의
 
     def run(self):
-        self.toggle_signal.emit()  # 신호 방출
+        while True:
+            time.sleep(3)  # 1초 대기
+            self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -35,7 +37,7 @@ class MainWindow(QMainWindow):
         # 사진 영역
         self.photo_label = QLabel()
         self.photo_label.setPixmap(
-            QPixmap("user_photo.png").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("user_photo.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         )
         self.photo_label.setAlignment(Qt.AlignCenter)
 
@@ -92,7 +94,7 @@ class MainWindow(QMainWindow):
         # 최상위 이미지 레이블 생성
         self.image_label = QLabel(self)
         self.image_label.setPixmap(
-            QPixmap("user_image.png").scaled(
+            QPixmap("user_image.jpg").scaled(
                 self.width(), self.height(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation
             )
         )
