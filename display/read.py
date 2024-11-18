@@ -86,7 +86,7 @@ def read_text(Sector):
 
 def read_token():
     result = ""
-    for i in range(1, 6):
+    for i in range(0, 6):
         result += read_text(i)
     
     print(result)
