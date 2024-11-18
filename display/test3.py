@@ -23,16 +23,4 @@ print(data[1])
 
 
 # 확인
-print("Response Label:", response_label)
-print("Response Status:", response_status)
-print("Response Message:", response_message)
-print("User Duty:", user_duty)
-print("User Status:", user_status)
-print("User Name:", user_name)
-print("User Phone Number:", user_phone_number)
-print("User ID:", user_id)
-print("User Profile Image URL:", user_profile_image_url)
-print("User Role:", user_role)
-print("User Employee Number:", user_employee_number)
-print("User Position:", user_position)
-print("User Email:", user_email)
+print("Response Label:", str(data[1][u'data'][u'email']))

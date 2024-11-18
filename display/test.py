@@ -24,8 +24,13 @@ class SignalThread(QThread):
             time.sleep(2)
             token = read.read_token()
             info = user.my_info(token)
-            info = info[1]
-            print(info)
+            user_duty = info[u'data'][u'duty']
+            user_name = info[u'data'][u'name']
+            user_phone_number = ""
+            user_profile_image_url = ""
+            user_employee_number = ""
+            user_position = ""
+            user_email = ""
             self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
