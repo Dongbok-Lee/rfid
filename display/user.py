@@ -24,5 +24,3 @@ def request_info(token):
         print("Response Data:", data)
     else:
         print("Error:", response.status_code, response.text)
-
-my_info("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0eXBvb24wODIwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1VTRVIiLCJpZCI6MjEsImlzcyI6IlNTbWFydE9mZmljZSIsImlhdCI6MTczMTczNTIxNSwiZXhwIjoxNzMzMDMxMjE1fQ.KI_tapd-Wi9OYAAAjg6nY4z62TFtUUu5IlkdJNPKjak")
