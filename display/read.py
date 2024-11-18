@@ -21,7 +21,6 @@ def read_text(Sector):
     RFID = MFRC522.MFRC522()
 
     print("# RFID Reader\n")
-    print("Info: Leave the sector field empty to exit.\n")
 
     # Get tag size if available
     (Status, TagSize) = RFID.Request(RFID.PICC_REQIDL)
@@ -75,8 +74,6 @@ def read_text(Sector):
                     data += block
             if data:
                 text_read = "".join(chr(i) for i in data)
-            print("UID:  ", format_uid(UID))
-            print("Data: ", text_read,"\n")
             return text_read
         else:
             print("Can't access sector", Sector, "!\n")
@@ -92,4 +89,5 @@ def read_token():
     for i in range(1, 6):
         result += read_text(i)
     
+    print(result)
     return result
