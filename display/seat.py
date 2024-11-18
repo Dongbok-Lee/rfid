@@ -3,10 +3,10 @@
 import requests
 # 자리 앉기
 def seat_in(token):
-    request_seat("IN_USE", token)
+    return request_seat("IN_USE", token)
 
 def seat_out():
-    request_seat("NOT_OCCUPIED", token)
+    return request_seat("NOT_OCCUPIED", token)
 
 def request_seat(status, token):
     # API URL

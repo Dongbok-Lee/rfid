@@ -50,7 +50,7 @@ class SignalThread(QThread):
             else:
                 result = seat.seat_out(token)
 
-            if not result:
+            if result is False:
                 continue
 
             user_active = not user_active
