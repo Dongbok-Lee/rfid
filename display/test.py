@@ -17,6 +17,15 @@ user_email = ""
 
 
 class SignalThread(QThread):
+    global user_duty
+    global user_name
+    global user_phone_number
+    global user_profile_image_url
+    global user_employee_number
+    global user_position
+    global user_email
+
+
     toggle_signal = pyqtSignal()  # 신호 정의
 
     def run(self):
@@ -39,6 +48,15 @@ class SignalThread(QThread):
             self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
+
+    global user_duty
+    global user_name
+    global user_phone_number
+    global user_profile_image_url
+    global user_employee_number
+    global user_position
+    global user_email
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setWindowTitle(unicode("전자 명함","utf-8"))
