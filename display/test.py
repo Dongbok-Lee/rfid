@@ -44,8 +44,14 @@ class SignalThread(QThread):
             if info is None:
                 continue
 
+            result = True
             if not user_active:
+                result = seat.seat_in(token)
+            else:
+                result = seat.seat_out(token)
 
+            if not result:
+                continue
 
             user_active = not user_active
 

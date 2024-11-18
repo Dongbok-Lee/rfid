@@ -29,7 +29,7 @@ def request_seat(status, token):
     if response.status_code == 200:
         data = response.json()  # JSON 응답 데이터 파싱
         print("Response Data:", data)
+        return True
     else:
         print("Error:", response.status_code, response.text)
-
-seat_in()
+        return False
