@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
-        self.id_label = QLabel("사원번호: " + unicode(user_employee_number,'utf-8'))
+        self.id_label = QLabel("사원번호: " + user_employee_number,'utf-8')
         self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
@@ -107,13 +107,13 @@ class MainWindow(QMainWindow):
         self.position_label.setAlignment(Qt.AlignCenter)
 
         # 전화번호
-        self.phone_label = QLabel("전화번호: " + unicode(user_phone_number,'utf-8'))
+        self.phone_label = QLabel("전화번호: " + user_phone_number,'utf-8')
         self.phone_label.setFont(QFont(nanumB_font, 12))
         self.phone_label.setStyleSheet("color: #555555;")
         self.phone_label.setAlignment(Qt.AlignCenter)
 
         # 이메일
-        self.email_label = QLabel("이메일: " + unicode(user_email,'utf-8'))
+        self.email_label = QLabel("이메일: " + user_email)
         self.email_label.setFont(QFont(nanumB_font, 12))
         self.email_label.setStyleSheet("color: #555555;")
         self.email_label.setAlignment(Qt.AlignCenter)
