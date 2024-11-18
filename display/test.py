@@ -11,8 +11,8 @@ class SignalThread(QThread):
 
     def run(self):
         while True:
-            token = read.read_token()
             time.sleep(2)
+            token = read.read_token()
             print(token)
             self.toggle_signal.emit()  # 신호 방출
 
