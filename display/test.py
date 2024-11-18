@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         # 사진 영역
         self.photo_label = QLabel()
         self.photo_label.setPixmap(
-            QPixmap("user_photo.jpg").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            QPixmap("https://sfdssafy.s3.amazonaws.com/%EC%B0%A8%EC%9D%80%EC%9A%B0.PNGbbeefb52-9c51-4aa8-9824-e9384371950a").scaled(280, 280, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         )
         self.photo_label.setAlignment(Qt.AlignCenter)
 
