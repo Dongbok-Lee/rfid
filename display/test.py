@@ -14,7 +14,7 @@ class SignalThread(QThread):
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.setWindowTitle("전자 명함")
+        self.setWindowTitle(unicode("전자 명함","utf-8"))
         self.setGeometry(100, 100, 600, 300)
         self.setStyleSheet("background-color: #f4f4f4;")  # 배경색 설정
 
