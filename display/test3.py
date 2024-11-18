@@ -5,6 +5,6 @@ data2 = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaW5naTY0NjJAZ21haWwuY29tIiwicm9sZSI6Il
 
 print(data == data2)
 
-print(len(data).strip())
+print(len(data.strip()))
 print(len(data2))
 
