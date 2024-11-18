@@ -80,7 +80,7 @@ def write_token(token):
     token_split_arr = [token[i:i + 48] for i in range(0, len(token), 48)]
     
     for i in range(8, 8 + len(token_split_arr)):
-        write_text(i + 1, token_split_arr[i])
+        write_text(i + 1, token_split_arr[i - 8])
 
 
 write_token("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0eXBvb24wODIwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1VTRVIiLCJpZCI6MjksImlzcyI6IlNTbWFydE9mZmljZSIsImlhdCI6MTczMTkyOTYzNiwiZXhwIjoxNzMzMjI1NjM2fQ.DAaJSnZ3gyy0IWx0oBaVrs8lPdvJQ4sikVVa5cHkKaA")
