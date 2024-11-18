@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 # 자리 앉기
 def my_info(token):
