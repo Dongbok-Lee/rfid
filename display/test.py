@@ -108,7 +108,7 @@ class MainWindow(QMainWindow):
         self.position_label.setAlignment(Qt.AlignCenter)
 
         # 전화번호
-        self.phone_label = QLabel(unicode("전화번호: ", 'utf-8')  + user_phone_number,'utf-8')
+        self.phone_label = QLabel(unicode("전화번호: ", 'utf-8')  + user_phone_number)
         self.phone_label.setFont(QFont(nanumB_font, 12))
         self.phone_label.setStyleSheet("color: #555555;")
         self.phone_label.setAlignment(Qt.AlignCenter)
