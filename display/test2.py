@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 from PyQt4.QtGui import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
+from PyQt4.QtCore import Qt
 
 class SimpleUI(QMainWindow):
     def __init__(self):
