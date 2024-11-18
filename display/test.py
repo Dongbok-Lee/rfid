@@ -7,6 +7,15 @@ from PyQt4.QtCore import QThread, pyqtSignal, Qt
 import read
 import user
 
+user_duty = ""
+user_name = ""
+user_phone_number = ""
+user_profile_image_url = ""
+user_employee_number = ""
+user_position = ""
+user_email = ""
+
+
 class SignalThread(QThread):
     toggle_signal = pyqtSignal()  # 신호 정의
 
@@ -14,7 +23,9 @@ class SignalThread(QThread):
         while True:
             time.sleep(2)
             token = read.read_token()
-            user.my_info(token)
+            info = user.my_info(token)
+            info = info[1]
+            print(info)
             self.toggle_signal.emit()  # 신호 방출
 
 class MainWindow(QMainWindow):
@@ -49,37 +60,37 @@ class MainWindow(QMainWindow):
         info_layout = QVBoxLayout()
 
         # 이름
-        self.name_label = QLabel(unicode("이소연",'utf-8'))
+        self.name_label = QLabel(unicode(user_name,'utf-8'))
         self.name_label.setFont(QFont(nanumB_font, 18, QFont.Bold))
         self.name_label.setStyleSheet("color: #333333;")
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
-        self.id_label = QLabel(unicode("사원번호: S2312345",'utf-8'))
+        self.id_label = QLabel(unicode("사원번호: " + user_employee_number,'utf-8'))
         self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
 
         # 팀 이름
-        self.team_label = QLabel(unicode("팀 이름: 개발팀",'utf-8'))
+        self.team_label = QLabel(unicode("직급: " + user_duty,'utf-8'))
         self.team_label.setFont(QFont(nanumB_font, 12))
         self.team_label.setStyleSheet("color: #555555;")
         self.team_label.setAlignment(Qt.AlignCenter)
 
         # 직책
-        self.position_label = QLabel(unicode("직책: 소프트웨어 엔지니어",'utf-8'))
+        self.position_label = QLabel(unicode("직책: " + user_position,'utf-8'))
         self.position_label.setFont(QFont(nanumB_font, 12))
         self.position_label.setStyleSheet("color: #555555;")
         self.position_label.setAlignment(Qt.AlignCenter)
 
         # 전화번호
-        self.phone_label = QLabel(unicode("전화번호: 010-1234-5678",'utf-8'))
+        self.phone_label = QLabel(unicode("전화번호: " + user_phone_number,'utf-8'))
         self.phone_label.setFont(QFont(nanumB_font, 12))
         self.phone_label.setStyleSheet("color: #555555;")
         self.phone_label.setAlignment(Qt.AlignCenter)
 
         # 이메일
-        self.email_label = QLabel(unicode("이메일: ssaleena@example.com",'utf-8'))
+        self.email_label = QLabel(unicode("이메일: " + user_email,'utf-8'))
         self.email_label.setFont(QFont(nanumB_font, 12))
         self.email_label.setStyleSheet("color: #555555;")
         self.email_label.setAlignment(Qt.AlignCenter)
