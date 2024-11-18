@@ -43,37 +43,37 @@ class MainWindow(QMainWindow):
         info_layout = QVBoxLayout()
 
         # 이름
-        self.name_label = QLabel("홍길동")
+        self.name_label = QLabel(unicode("홍길동",'utf-8'))
         self.name_label.setFont(QFont(nanumB_font, 18, QFont.Bold))
         self.name_label.setStyleSheet("color: #333333;")
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
-        self.id_label = QLabel("사원번호: 12345")
+        self.id_label = QLabel(unicode("사원번호: 12345",'utf-8'))
         self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
 
         # 팀 이름
-        self.team_label = QLabel("팀 이름: 개발팀")
+        self.team_label = QLabel(unicode("팀 이름: 개발팀",'utf-8'))
         self.team_label.setFont(QFont(nanumB_font, 12))
         self.team_label.setStyleSheet("color: #555555;")
         self.team_label.setAlignment(Qt.AlignCenter)
 
         # 직책
-        self.position_label = QLabel("직책: 소프트웨어 엔지니어")
+        self.position_label = QLabel(unicode("직책: 소프트웨어 엔지니어",'utf-8'))
         self.position_label.setFont(QFont(nanumB_font, 12))
         self.position_label.setStyleSheet("color: #555555;")
         self.position_label.setAlignment(Qt.AlignCenter)
 
         # 전화번호
-        self.phone_label = QLabel("전화번호: 010-1234-5678")
+        self.phone_label = QLabel(unicode("전화번호: 010-1234-5678",'utf-8'))
         self.phone_label.setFont(QFont(nanumB_font, 12))
         self.phone_label.setStyleSheet("color: #555555;")
         self.phone_label.setAlignment(Qt.AlignCenter)
 
         # 이메일
-        self.email_label = QLabel("이메일: honggildong@example.com")
+        self.email_label = QLabel(unicode("이메일: honggildong@example.com",'utf-8'))
         self.email_label.setFont(QFont(nanumB_font, 12))
         self.email_label.setStyleSheet("color: #555555;")
         self.email_label.setAlignment(Qt.AlignCenter)
