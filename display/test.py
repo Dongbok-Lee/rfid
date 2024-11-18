@@ -1,21 +1,9 @@
-# -*- encoding:utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import sys
 import time
 from PyQt4.QtGui import QApplication, QLabel, QHBoxLayout, QVBoxLayout, QMainWindow, QWidget, QPushButton, QPixmap, QFont, QFontDatabase
 from PyQt4.QtCore import QThread, pyqtSignal, Qt
-
-# 한글 메시지 추가 깨짐 방지---------------------------
-reload(sys)
-sys.setdefaultencoding('utf-8')
-# 한글 메시지 추가 깨짐 방지---------------------------
-
-try:
-    if sys.frozen:
-        sys.setdefaultencoding("utf-8")
-except:
-    pass
-
 
 class SignalThread(QThread):
     toggle_signal = pyqtSignal()  # 신호 정의
@@ -56,37 +44,37 @@ class MainWindow(QMainWindow):
 
         # 이름
         self.name_label = QLabel("홍길동")
-        self.name_label.setFont(QFont("DejaVu Sans", 18, QFont.Bold))
+        self.name_label.setFont(QFont(nanumB_font, 18, QFont.Bold))
         self.name_label.setStyleSheet("color: #333333;")
         self.name_label.setAlignment(Qt.AlignCenter)
 
         # 사원번호
         self.id_label = QLabel("사원번호: 12345")
-        self.id_label.setFont(QFont("DejaVu Sans", 12))
+        self.id_label.setFont(QFont(nanumB_font, 12))
         self.id_label.setStyleSheet("color: #555555;")
         self.id_label.setAlignment(Qt.AlignCenter)
 
         # 팀 이름
         self.team_label = QLabel("팀 이름: 개발팀")
-        self.team_label.setFont(QFont("DejaVu Sans", 12))
+        self.team_label.setFont(QFont(nanumB_font, 12))
         self.team_label.setStyleSheet("color: #555555;")
         self.team_label.setAlignment(Qt.AlignCenter)
 
         # 직책
         self.position_label = QLabel("직책: 소프트웨어 엔지니어")
-        self.position_label.setFont(QFont("DejaVu Sans", 12))
+        self.position_label.setFont(QFont(nanumB_font, 12))
         self.position_label.setStyleSheet("color: #555555;")
         self.position_label.setAlignment(Qt.AlignCenter)
 
         # 전화번호
         self.phone_label = QLabel("전화번호: 010-1234-5678")
-        self.phone_label.setFont(QFont("DejaVu Sans", 12))
+        self.phone_label.setFont(QFont(nanumB_font, 12))
         self.phone_label.setStyleSheet("color: #555555;")
         self.phone_label.setAlignment(Qt.AlignCenter)
 
         # 이메일
         self.email_label = QLabel("이메일: honggildong@example.com")
-        self.email_label.setFont(QFont("DejaVu Sans", 12))
+        self.email_label.setFont(QFont(nanumB_font, 12))
         self.email_label.setStyleSheet("color: #555555;")
         self.email_label.setAlignment(Qt.AlignCenter)
 

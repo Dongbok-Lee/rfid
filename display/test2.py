@@ -1,38 +1,30 @@
-
 # -*- coding: utf-8 -*-
 import sys
-import os                   #Win Fun's
+from qtpy.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
+from qtpy.QtWebEngineWidgets import QWebEngineView
 
-from PyQt4 import QtCore, QtGui, uic, Qt
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
-from PyQt4 import uic
-from datetime import datetime
 
-# 한글 메시지 추가 깨짐 방지---------------------------
-reload(sys)
-sys.setdefaultencoding('utf-8')
-# 한글 메시지 추가 깨짐 방지---------------------------
+class NaverBrowser(QMainWindow):
+    def __init__(self):
+        super(NaverBrowser, self).__init__()
+        self.setWindowTitle("네이버 보기")
+        self.setGeometry(100, 100, 800, 600)
 
-try:
-    if sys.frozen:
-        sys.setdefaultencoding("utf-8")
-except:
-    pass
+        # 메인 위젯 설정
+        self.central_widget = QWidget(self)
+        self.setCentralWidget(self.central_widget)
 
-form_class = uic.loadUiType("Study_Py.ui")[0]
-class MyWindow(QMainWindow, form_class):
-    #global gReadList(255)
+        # 레이아웃
+        layout = QVBoxLayout(self.central_widget)
 
- def __init__(self, parent=None):
-        QtGui.QMainWindow.__init__(self, parent)
-        self.setupUi(self)
-        self.setWindowTitle("Study_Python")
+        # QWebEngineView를 사용하여 웹 페이지 로드
+        self.browser = QWebEngineView()
+        self.browser.setUrl("https://www.naver.com")  # 네이버 주소
+        layout.addWidget(self.browser)
 
-# Main Start *****************************************
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    myWindow = MyWindow()
-    myWindow.show()
-    app.exec_()
-
+    window = NaverBrowser()
+    window.show()
+    sys.exit(app.exec_())
