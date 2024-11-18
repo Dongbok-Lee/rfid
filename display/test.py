@@ -166,12 +166,13 @@ class MainWindow(QMainWindow):
         print(user_duty)
         if self.image_visible:
             self.image_label.hide()  # 이미지 숨기기
-            self.name_label.setText(unicode("이름: " + user_name, 'utf-8'))
-            self.id_label.setText(unicode("사원번호: ",'utf-8') + user_employee_number)
-            self.team_label.setText(unicode("직급: " + user_duty, 'utf-8'))
-            self.position_label.setText(unicode("직책: " + user_position,'utf-8'))
-            self.phone_label.setText(unicode("전화번호: ",'utf-8') + user_phone_number)
-            self.email_label.setText("이메일: " + user_email)
+            self.name_label.setText(unicode(user_name,'utf-8'))
+            # self.name_label.setText(unicode("이름: " + user_name, 'utf-8'))
+            # self.id_label.setText(unicode("사원번호: ",'utf-8') + user_employee_number)
+            # self.team_label.setText(unicode("직급: " + user_duty, 'utf-8'))
+            # self.position_label.setText(unicode("직책: " + user_position,'utf-8'))
+            # self.phone_label.setText(unicode("전화번호: ",'utf-8') + user_phone_number)
+            # self.email_label.setText("이메일: " + user_email)
         else:
             self.image_label.show()  # 이미지 보이기
         self.image_visible = not self.image_visible
