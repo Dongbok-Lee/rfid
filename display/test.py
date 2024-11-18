@@ -139,7 +139,8 @@ class MainWindow(QMainWindow):
 
     def toggle_image(self):
         """이미지를 숨기거나 보이게 하는 함수."""
-
+        print(user_name)
+        print(user_duty)
         if self.image_visible:
             self.image_label.hide()  # 이미지 숨기기
             self.name_label.setText(unicode("이름: " + user_name, "utf-8"))
